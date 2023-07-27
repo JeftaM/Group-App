@@ -29,14 +29,24 @@
     <style>
         body,html {
             height: 100%;
+            background-color: black;
+        }
+        .login-box {
+            max-width: 400px; /* Adjust the maximum width to your preference */
+            margin: 0 auto; /* Center the box horizontally */
+            padding: 20px; /* Add some padding around the form */
+            background-color: #f9f9f9; /* Optional: Add a background color to the box */
+            border: 1px solid #ddd; /* Optional: Add a border around the box */
+            border-radius: 8px; /* Optional: Add rounded corners to the box */
         }
     </style>
 </head>
 
 <body>
-    <div class="container-fluid h-100">
+    <div class="container-fluid h-100" >
         <div class="row justify-content-center align-items-center h-100">
             <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="login-box"> <!-- Add the login-box class to create the smaller box -->
         <form>
             <div class="form-group">
                 <label for="email">Emailadres:</label>
@@ -50,6 +60,7 @@
             <p id="error" style="color:red" hidden>ongeldige gebruikersnaam of wachtwoord</p>
         </form>
     </div>
+</div>
 </div>
 </div>
     <script>
