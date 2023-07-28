@@ -19,15 +19,15 @@ async function tekenmenu() {
   
   start = `
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <nav class="navbar navbar-dark customnavbar" style="background-color: black !important;">
+  <nav class="navbar navbar-dark customnavbar" style="background-color: rgb(24, 26, 27) !important;padding-left:50px">
   `
   
   end = `
       <ul class="navbar-nav ml-auto text-right">
           <li class="nav-item">
-              <span class="nav-link disabled" href="#">Ingelogd als: ${sessionStorage.userNaam}</span>
-              <span class="nav-link disabled" href="#">Rol: ${sessionStorage.userRol}</span>
-              <span class="nav-link nav-button" onclick="uitloggen()">Uitloggen</span>
+              <span class="nav-link disabled " href="#">Ingelogd als: <span class="different-color">${sessionStorage.userNaam}</span></span>
+              <span class="nav-link disabled " href="#">Rol: <span class="different-color">${sessionStorage.userRol}</span></span>
+              <span class="nav-link nav-button no-hover " onclick="uitloggen()"><span class="different-color">Uitloggen</span></span>
           </li>
       </ul>
   </nav>
@@ -63,12 +63,33 @@ async function generateMenu(){
   data = await response.json();
   
   result = '';
-    for(page of pages){
-      if(data.includes(page.link))
+  let homeAdded = false; // To ensure "Home" is added only once
+  for (page of pages) {
+    if (page.name === 'Home') {
+      if (!homeAdded) {
+        // Add the logo for "Home"
         result += `
           <li class="nav-item">
-            <a class="nav-link active" href="${page.link}">${page.name}</a>
-          </li>`
+            <a class="navbar-brand" href="${page.link}">
+              <img class="glowing-logo" src="ycnextlogo.png" alt="Logo" width="50" height="50">
+            </a>
+          </li>`;
+        homeAdded = true;
+      }
+
+      // Add the text link for "Home"
+      result += `
+        <li class="nav-item">
+          <a class="nav-link active" href="${page.link}">
+          ${page.name}</a>
+        </li>`;
+    } else if (data.includes(page.link)) {
+      // Generate other menu links as before
+      result += `
+        <li class="nav-item">
+          <a class="nav-link active" href="${page.link}">${page.name}</a>
+        </li>`;
     }
-    return result;
+  }
+  return result;
 }
