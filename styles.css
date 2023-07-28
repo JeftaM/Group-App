@@ -26,3 +26,52 @@ body {
   }
    */
 
+
+   
+   .navbar-nav .nav-item .nav-link {
+    line-height: 0.2; /* Adjust this value to decrease/increase the line height */
+    font-size: 13px; /* Adjust this value to decrease/increase the font size */
+    padding-right: 20px; /* Adjust this value to increase/decrease the right padding */
+    font-family: 'Open Sans', Arial, sans-serif;
+  }
+
+  .navbar-nav .nav-item .nav-button {
+    margin-bottom:-5px;
+    text-decoration: underline; /* Add underline to the "uitloggen" text */
+    font-size: 13px; /* Adjust this value to decrease/increase the font size */
+    text-decoration-color: rgb(92, 204, 200); /* Change the color to match the text color */
+    line-height: 1.4; /* Adjust this value to decrease/increase the line height */
+
+
+  }
+
+  .navbar-nav .nav-item .different-color {
+    color: rgb(92, 204, 200);
+    text-transform: capitalize; /* Capitalize the text inside the element */
+  }
+
+
+
+  .glowing-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Make the logo circular by setting the border radius to 50% */
+    box-shadow: 0 0 13px rgba(165, 216, 215, 0.651); /* Adjust the color and spread as needed */
+    transition: box-shadow 0.3s ease-in-out; /* Optional: Add a smooth transition effect */
+    /* animation: glowingAnimation 2s infinite;  */
+    /* height: 100vh;  */
+    /* background-color: #f0f0f0;  */
+  }
+
+  .glowing-logo:hover {
+    box-shadow: 0 0 
+    30px rgb(92, 204, 200); /* Adjust the color and spread for the glowing effect on hover */
+  }
+
+  .nav-link:not(.no-hover):hover {
+        /* Define the styles you want when hovering over a nav-link */
+    /* For example, changing the background color and text color */
+    background-color: #f1f1f11a;
+
+    
+  }
